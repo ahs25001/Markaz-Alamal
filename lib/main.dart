@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';import 'package:markaz_elamal/core/utils/app_strings.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:markaz_elamal/core/utils/app_strings.dart';
 
 import 'config/routes/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -31,4 +34,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
